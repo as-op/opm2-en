@@ -1,8 +1,10 @@
-name: Build pm2-Guide
+name: Build pm2-Guide Release
 
 on:
   workflow_dispatch:
   push:
+    # run script in master branch
+    branches: [ master ]
     # run script on tagged commits
     tags:
       - '*'
@@ -11,9 +13,10 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout the repository
+        uses: actions/checkout@v2
 
-      - name: Get the version
+      - name: Get the version number by git reference
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
 
@@ -40,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{steps.get_version.outputs.VERSION}}
-          release_name: Build ${{steps.get_version.outputs.VERSION}}
+          release_name: ${{steps.get_version.outputs.VERSION}}
           draft: false
           prerelease: false
 

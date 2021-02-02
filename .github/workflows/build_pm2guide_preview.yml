@@ -2,12 +2,19 @@ name: Build pm2-Guide Preview
 
 on:
   workflow_dispatch:
+  push:
+    # run script in master branch
+    branches: [ master ]
+    # run script on changes in pblications folder
+    paths:
+      - "publications/**"
 
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout the repository
+        uses: actions/checkout@v2
 
       - name: Get Commit Hash
         id: slug
