@@ -1,6 +1,7 @@
 name: Build pm2-Guide
 
 on:
+  workflow_dispatch:
   push:
     # run script on tagged commits
     tags:
