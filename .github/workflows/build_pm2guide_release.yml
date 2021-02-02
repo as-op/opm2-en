@@ -2,12 +2,9 @@ name: Build pm2-Guide Release
 
 on:
   push:
-    # run script in master branch
-    branches:
-      - master
-    # run script on tagged commits
+    # run script on semver tagged commits
     tags:
-      - v*
+      - "v*.*.*"
 
 jobs:
   build:
@@ -15,6 +12,8 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
+        with:
+          ref: master
 
       - name: Get the version number by git reference
         id: get_version
