@@ -5,7 +5,7 @@ on:
   push:
     # run script in master branch
     branches: [ master ]
-    # run script on changes in pblications folder
+    # run script on changes in publications folder
     paths:
       - "publications/**"
 
@@ -36,7 +36,7 @@ jobs:
           cd .github/build
           bundle exec rake book:build
 
-      - name: Create Draft Release
+      - name: Create Preview Release
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -47,7 +47,7 @@ jobs:
           draft: false
           prerelease: true
 
-      - name: Upload Draft Asset
+      - name: Upload Preview Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
