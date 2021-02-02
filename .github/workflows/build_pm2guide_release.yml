@@ -2,17 +2,19 @@ name: Build pm2-Guide
 
 on:
   push:
-    branches: [ master ]
-    # Sequence of patterns matched against refs/tags
+    # run script on tagged commits
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-  workflow_dispatch:
+      - '*'
 
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
 
       - name: Set up Ruby
         uses: actions/setup-ruby@v1
@@ -37,8 +39,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Preview Build Commit ${{steps.slug.outputs.sha8}}
-          draft: true
+          release_name: Build ${{steps.get_version.outputs.VERSION}}
+          draft: false
           prerelease: false
 
       - name: Upload Release Asset
@@ -49,5 +51,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/pm²-guide.pdf
-          asset_name: pm2-guide-${{steps.slug.outputs.sha8}}.pdf
+          asset_name: pm2-guide-${{steps.get_version.outputs.VERSION}}.pdf
           asset_content_type: application/pdf
