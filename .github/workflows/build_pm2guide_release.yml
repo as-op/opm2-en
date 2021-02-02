@@ -1,13 +1,13 @@
 name: Build pm2-Guide Release
 
 on:
-  workflow_dispatch:
   push:
     # run script in master branch
-    branches: [ master ]
+    branches:
+      - master
     # run script on tagged commits
     tags:
-      - '*'
+      - v*
 
 jobs:
   build:
