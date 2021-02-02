@@ -42,6 +42,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          tag_name: "latest_build"
           release_name: Preview Build Commit ${{steps.slug.outputs.sha8}}
           draft: false
           prerelease: true
