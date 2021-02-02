@@ -36,13 +36,21 @@ jobs:
           cd .github/build
           bundle exec rake book:build
 
+      - name: Remove latest Preview Release
+        uses: dev-drprasad/delete-tag-and-release@v0.1.2
+        with:
+          delete_release: true # default: false
+          tag_name: "latest_preview"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create Preview Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: "latest_build"
+          tag_name: "latest_preview"
           release_name: Preview Build Commit ${{steps.slug.outputs.sha8}}
           draft: false
           prerelease: true
