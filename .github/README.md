@@ -11,7 +11,8 @@ Commit hash and date are included in the pdf. The filename is `pm2guide-#commith
 
 **Commits tagged for release** are triggering [Build pm2-Guide Action](./workflows/build_pm2guide_release.yml)
 
-Version number must follow [Semantic Versioning](https://semver.org/).
+It’s common practice to prefix your version names with the letter v. Some good tag names might be v1.0 or v2.3.4.
+Read more at [Semantic Versioning](https://semver.org/).
 
 Version number and date are included in the pdf. The filename is `pm2guide-#version.pdf`. 
 
