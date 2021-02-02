@@ -44,8 +44,8 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Preview Build Commit ${{steps.slug.outputs.sha8}}
-          draft: true
-          prerelease: false
+          draft: false
+          prerelease: true
 
       - name: Upload Draft Asset
         id: upload-release-asset

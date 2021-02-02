@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
-        with:
-          ref: master
 
       - name: Get the version number by git reference
         id: get_version
