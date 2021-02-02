@@ -18,4 +18,4 @@ Version number and date are included in the pdf. The filename is `pm2guide-#vers
 
 ## Download
 
-Preview & Release builds can be downloaded at the [Github Release Page](/releases)
+Preview & Release builds can be downloaded at the [Github Release Page](https://github.com/pm2alliance/opm2-en/releases)
