@@ -3,7 +3,7 @@
 ## Builds
 ### Preview
 
-Commits with changes in **/publications/** are triggering the [Build pm2-Guide Preview Action](./workflows/preview.yml).
+Commits with changes in **/publications/** are triggering the [Build pm2-Guide Preview Action](./workflows/build_pm2guide_preview.yml).
 
 Commit hash and date are included in the pdf. The filename is `pm2guide-#commithash.pdf`. 
 
