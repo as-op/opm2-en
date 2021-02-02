@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Preview Commit ${steps.slug.outputs.sha8}
+          release_name: Preview Commit ${{steps.slug.outputs.sha8}}
           draft: true
           prerelease: false
 
@@ -48,5 +48,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/pm²-guide.pdf
-          asset_name: pm²-guide-${steps.slug.outputs.sha8}.pdf
+          asset_name: pm²-guide-${{steps.slug.outputs.sha8}}.pdf
           asset_content_type: application/pdf
