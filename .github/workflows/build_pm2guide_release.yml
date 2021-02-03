@@ -51,7 +51,7 @@ jobs:
            Version: ${{ steps.get_version.outputs.VERSION }}
            Commit: ${{ steps.slug.outputs.sha8 }}
            Date: ${{ steps.date.outputs.date }}
-          tag_name: ${ {steps.get_version.outputs.VERSION }}
+          tag_name: ${{ steps.get_version.outputs.VERSION }}
           release_name: ${{ steps.get_version.outputs.VERSION }}
           draft: false
           prerelease: false
