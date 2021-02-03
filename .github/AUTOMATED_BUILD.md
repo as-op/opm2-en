@@ -16,8 +16,14 @@ Preview build can be downloaded as attached asset at [Github Latest Preview Page
 
 **Commits tagged for release** are triggering [Build pm2-Guide Action](./workflows/build_pm2guide_release.yml)
 
-It’s common practice to prefix your version names with the letter v. Some good tag names might be v1.0 or v2.3.4.
+It’s common practice to prefix your version names with the letter v. Some good tag names might be v1.0.0 or v2.3.4.
 Read more at [Semantic Versioning](https://semver.org/).
+
+Example: 
+```console
+~$ git tag v1.0.0
+~$ git push origin --tags
+```
 
 Version number and date are included in the pdf. The pdf filename follows the form `pm2guide-#version.pdf`. 
 
