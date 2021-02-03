@@ -56,10 +56,10 @@ jobs:
         with:
           body: |
             Latest Preview Version
-            Commit ${{steps.slug.outputs.sha8}}
-            Date ${{ steps.date.outputs.date }}
+            Commit: ${{ steps.slug.outputs.sha8 }}
+            Date: ${{ steps.date.outputs.date }}
           tag_name: "latest_preview"
-          release_name: Preview Build Commit ${{steps.slug.outputs.sha8}}
+          release_name: Preview Build Commit ${{ steps.slug.outputs.sha8 }}
           draft: false
           prerelease: true
 
@@ -71,5 +71,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/pm²-guide.pdf
-          asset_name: pm2-guide-${{steps.slug.outputs.sha8}}.pdf
+          asset_name: pm2-guide-${{ steps.slug.outputs.sha8 }}.pdf
           asset_content_type: application/pdf
