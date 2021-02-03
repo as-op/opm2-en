@@ -6,9 +6,11 @@
 Commits with changes in **/publications/** are triggering the [Build pm2-Guide Preview Action](./workflows/build_pm2guide_preview.yml).
 Only commits and merged pull request into the **master** branch are handled.
 
-The Action can also be manually triggered on the [Githubs Action Page](https://github.com/as-op/opm2-en/actions?query=workflow%3A%22Build+pm2-Guide+Preview%22).
+The Action can also be manually triggered on the [Githubs Action Page](https://github.com/pm2alliance/opm2-en/actions?query=workflow%3A%22Build+pm2-Guide+Preview%22).
 
 Commit hash and date are included in the pdf. The pdf filename follows the form `pm2guide-#commithash.pdf`. 
+
+Preview build can be downloaded as attached asset at [Github Latest Preview Page](https://github.com/pm2alliance/opm2-en/releases/tag/latest_preview)
 
 ### Release
 
@@ -19,6 +21,4 @@ Read more at [Semantic Versioning](https://semver.org/).
 
 Version number and date are included in the pdf. The pdf filename follows the form `pm2guide-#version.pdf`. 
 
-## Download
-
-Preview & Release builds can be downloaded at the [Github Release Page](https://github.com/pm2alliance/opm2-en/releases)
+Corresponding build can be downloaded as attached asset at [Github Release Page](https://github.com/pm2alliance/opm2-en/releases)
